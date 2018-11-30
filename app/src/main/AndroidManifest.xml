@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.jinhui.broadcastreceiverstudy">
+
+    <!--添加拨打电话权限-->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".reveiver._static.StaticReceiver1"
+            android:enabled="true"
+            android:exported="true">
+            <!--设置静态优先级-->
+            <intent-filter android:priority="100">
+                <!--自定义action-->
+                <action android:name="custom_action"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".reveiver._static.StaticReceiver2"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="300">
+                <!--自定义action-->
+                <action android:name="custom_action"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".reveiver._static.StaticReceiver3"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="400">
+                <!--自定义action-->
+                <action android:name="custom_action"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".example.StaticReceiverNew"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <!--设置打电话对应的action-->
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

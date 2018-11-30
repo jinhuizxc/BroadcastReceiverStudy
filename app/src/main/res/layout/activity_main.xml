@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/bt_dynamic_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="动态注册广播" />
+
+    <Button
+        android:id="@+id/bt_static_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="静态注册广播" />
+
+    <Button
+        android:id="@+id/bt_all_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="两种注册方式均不设置优先级" />
+
+    <Button
+        android:id="@+id/bt_order_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="有序广播下两种注册方式比较" />
+
+    <Button
+        android:id="@+id/bt_call_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打电话的广播，比较程序运行中与结束运行时，两种注册方式的比较" />
+
+</LinearLayout>
